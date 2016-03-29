@@ -93,6 +93,7 @@ function Div(n, aX, iDiv, aY) {
         aY[i] = theDiv;
     }
 }
+
 //compute arctan
 function arctan(iAng, n, aX) {
     iAng_squared = iAng * iAng;
@@ -113,6 +114,7 @@ function arctan(iAng, n, aX) {
     }
     mess += "aArctan=" + aArctan + "<br>";
 }
+
 // Calculate pi
 function calcPI(numDec) {
     var ans = "";
@@ -143,10 +145,8 @@ function calcPI(numDec) {
         arctan(iAng[i], arrayLength, aArctan);
         //multiply by coefficients of arctan
         Mul(arrayLength, aArctan, Math.abs(coeff[i]));
-        //mess+="mi="+coeff[i]+"<br>";
         if (coeff[i] > 0) Add(arrayLength, aPI, aArctan);
         else Sub(arrayLength, aPI, aArctan);
-        //mess+="api="+aPI+"<br>";
     }
     //we have calculated pi/4, so need to finally multiply
     Mul(arrayLength, aPI, 4);
