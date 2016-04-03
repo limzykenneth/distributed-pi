@@ -1,37 +1,17 @@
 {
-  "name": "boilerplate",
-  "version": "0.0.1",
-  "description": "Insert description here",
-  "main": "index.html",
+  "name": "web-workers",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "npm install",
-    "build": "browserify ./scripts/custom.js -o ./scripts/main.js -d && lessc ./styles/style.less | postcss --use autoprefixer > ./styles/style.css",
-    "precompile": "npm run build",
-    "compile": "uglifyjs -m --screw-ie8 ./scripts/main.js > ./scripts/main.min.js && cleancss ./styles/style.css > ./styles/style.min.css",
-    "prewatch": "npm install && npm run compile",
-    "watch": "onchange './styles/style.less' './scripts/main.js' -v -- npm run compile"
+    "start": "node ./bin/www"
   },
-  "author": "Kenneth Lim <limzy.kenneth@gmail.com> (http://designerken.be)",
-  "license": "BSD-3-Clause",
-  "devDependencies": {
-    "autoprefixer": "~5.2.0",
-    "browserify": "~10.2.0",
-    "browserify-shim": "~3.8.9",
-    "less": "^2.5.1",
-    "onchange": "~1.1.0",
-    "uglify-js": "~2.4.24",
-    "clean-css": "~3.3.9"
-  },
-  "dependencies": {},
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "browserify-shim": {
-    "jquery": "global:$",
-    "underscore": "global:_",
-    "backbone": "global:Backbone"
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
   }
 }
