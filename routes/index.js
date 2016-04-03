@@ -3,6 +3,7 @@ var fs = require('fs');
 var router = express.Router();
 var s = require('../taskScheduler');
 var url = require('url');
+var PI = require('./writePI.js');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -55,7 +56,7 @@ router.get('/pi', function(req, res){
 	// 	if(err) throw err;
 	// 	res.end("3." + data);
 	// });
-	s.getDigits(function(data){
+	PI.getDigits(function(data){
 		res.end("3." + data);
 	});
 });
