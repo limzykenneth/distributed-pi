@@ -45,13 +45,13 @@ router.get('/worker.js', function(req, res){
 	});
 });
 
-router.get('/pi', function(){
+router.get('/pi', function(req, res){
 	res.status(200);
 	res.set({
 		'Content-Type': 'text/plain', 
 		'Access-Control-Allow-Origin': '*'
 	});
-	fs.readFile('../pi.txt', 'utf8', function(err, data){
+	fs.readFile('./pi.txt', 'utf8', function(err, data){
 		if(err) throw err;
 		res.end("3." + data);
 	});
