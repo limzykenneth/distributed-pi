@@ -27,7 +27,7 @@ writePI.getDigits = function(callback){
 			str += value.digits;
 		});
 		if(typeof callback === "function"){
-			callback(str, callback);
+			callback(str);
 		}else{
 			console.log("Callback not function!");
 			return;

@@ -51,8 +51,11 @@ router.get('/pi', function(req, res){
 		'Content-Type': 'text/plain', 
 		'Access-Control-Allow-Origin': '*'
 	});
-	fs.readFile('./pi.txt', 'utf8', function(err, data){
-		if(err) throw err;
+	// fs.readFile('./pi.txt', 'utf8', function(err, data){
+	// 	if(err) throw err;
+	// 	res.end("3." + data);
+	// });
+	s.getDigits(function(data){
 		res.end("3." + data);
 	});
 });
