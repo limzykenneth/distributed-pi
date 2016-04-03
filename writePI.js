@@ -17,17 +17,19 @@ writePI.getDigits = function(callback){
 	var str = "";
 
 	connection.query('SELECT * FROM pi_value', function(err, rows, fields) {
-		if (err.code == 'PROTOCOL_CONNECTION_LOST'){
-			connection = mysql.createConnection({
-			  host     : process.env.mysql_host,
-			  user     : process.env.mysql_user,
-			  password : process.env.mysql_password,
-			  database : 'heroku_ec0aa19ecb8e433',
-			  bigNumberStrings: true,
-			  supportBigNumbers: true
-			});
-		}else if (err) {
-			throw err;
+		if (err) {
+			if (err.code == 'PROTOCOL_CONNECTION_LOST'){
+				connection = mysql.createConnection({
+				  host     : process.env.mysql_host,
+				  user     : process.env.mysql_user,
+				  password : process.env.mysql_password,
+				  database : 'heroku_ec0aa19ecb8e433',
+				  bigNumberStrings: true,
+				  supportBigNumbers: true
+				});
+			}else{
+				throw err;
+			}
 		}
 		var sorted = _.sortBy(rows, function(o){
 			return o.timestamp;
@@ -55,16 +57,20 @@ writePI.writeDigits = function(d){
 		query+="')";
 
 	connection.query(query, function(err, rows, fields) {
-		if (err.code == 'PROTOCOL_CONNECTION_LOST'){
-			connection = mysql.createConnection({
-			  host     : process.env.mysql_host,
-			  user     : process.env.mysql_user,
-			  password : process.env.mysql_password,
-			  database : 'heroku_ec0aa19ecb8e433',
-			  bigNumberStrings: true,
-			  supportBigNumbers: true
-			});
-		}else if (err) throw err;
+		if (err) {
+			if (err.code == 'PROTOCOL_CONNECTION_LOST'){
+				connection = mysql.createConnection({
+				  host     : process.env.mysql_host,
+				  user     : process.env.mysql_user,
+				  password : process.env.mysql_password,
+				  database : 'heroku_ec0aa19ecb8e433',
+				  bigNumberStrings: true,
+				  supportBigNumbers: true
+				});
+			}else{
+				throw err;
+			}
+		}
 		console.log("Success!");
 	});
 };
