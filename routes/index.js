@@ -22,7 +22,7 @@ router.get('/task', function(req, res) {
 	var data = JSON.parse(page.query.data);
 
 	if(data.length == 3){
-		var new_job = s.save_job(data[0], data[1], data[2]);
+		var new_job = s.save_job(Math.floor(data[0]), data[1], data[2]);
 		if(new_job){
 			res.end(JSON.stringify(new_job));
 		}else{
