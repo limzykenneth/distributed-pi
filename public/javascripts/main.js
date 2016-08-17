@@ -18,6 +18,12 @@ worker.addEventListener('message', function(e) {
 }, false);
 
 $(document).ready(function() {
-    $("#start").click(start);
+    // $("#start").click(start);
     $("#stop").click(stop);
+
+    $("#get-pi").click(function(){
+    	$.get("pi", function(data) {
+    		$("#pi").text(data);
+    	});
+    });
 });

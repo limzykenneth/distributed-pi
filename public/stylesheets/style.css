@@ -5,7 +5,7 @@ a:link {
 }
 a:visited {
   text-decoration: none;
-  color: #fff;
+  color: #555;
 }
 body {
   background-color: #e0e0e0;
@@ -35,9 +35,26 @@ h6 {
 
 #page-content{
   padding: 1em;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px) {
+      width: 100%;
+  }
 }
 
 #page-content #result{
   font-family: "Inconsolata", monospace;
   font-size: 18pt;
+}
+
+#get-pi{
+}
+
+#pi{
+  word-wrap: break-word;
+  font-family: "Inconsolata", monospace;
 }

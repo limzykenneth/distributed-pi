@@ -8,7 +8,7 @@ var PI = require('../writePI.js');
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index', {
-        title: 'Express'
+        title: 'Distributed Pi'
     });
 });
 
@@ -37,7 +37,7 @@ router.get('/task', function(req, res) {
 router.get('/worker.js', function(req, res){
 	res.status(200);
 	res.set({
-		'Content-Type': 'text/javascript', 
+		'Content-Type': 'text/javascript',
 		'Access-Control-Allow-Origin': '*'
 	});
 	fs.readFile('worker.js', 'utf8', function(err, data){
@@ -49,7 +49,7 @@ router.get('/worker.js', function(req, res){
 router.get('/pi', function(req, res){
 	res.status(200);
 	res.set({
-		'Content-Type': 'text/plain', 
+		'Content-Type': 'text/plain',
 		'Access-Control-Allow-Origin': '*'
 	});
 	// fs.readFile('./pi.txt', 'utf8', function(err, data){

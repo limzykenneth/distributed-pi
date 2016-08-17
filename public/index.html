@@ -6,7 +6,7 @@
     <head profile="http://www.w3.org/2005/10/profile">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>The site's title</title>
+        <title>Distributed PI</title>
 
         <!-- for Google -->
         <meta name="description" content="" />
@@ -42,7 +42,7 @@
 
         <link rel="stylesheet" href="stylesheets/normalize.min.css">
         <link rel="stylesheet" href="stylesheets/style.css">
-        
+
         <!-- jQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="./vendor/jquery.min.js"><\/script>')</script>
@@ -53,7 +53,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
         <script>window.Backbone || document.write('<script src="./vendor/backbone-min.js"><\/script>')</script>
 
-        <!-- GSAP jQuery .animate() 
+        <!-- GSAP jQuery .animate()
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/jquery.gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/CSSPlugin.min.js"></script> -->
@@ -66,6 +66,8 @@
         <![endif]-->
 
 		<div id="page-content">
+            <h3>Distributed PI</h3>
+            <h4>Adapted from <a href="https://github.com/antimatter15/distributed-pi" target=_blank>https://github.com/antimatter15/distributed-pi</a></h4>
             <div>
                 <!-- <input id="calc"></input> -->
                 <!-- <button id="start">Plugin overlord</button> -->
@@ -73,11 +75,16 @@
             </div>
             <br />
             <div id="result"></div>
-		</div>
-        <div>
-            <progress id="compute"></progress>
-        </div>
+            <div>
+                <progress id="compute"></progress>
+            </div>
 
+            <div>
+                <button id="get-pi">Get Pi</button>
+                <p id="pi"></p>
+            </div>
+
+        </div>
         <script src="./javascripts/main.js"></script>
     </body>
 </html>
